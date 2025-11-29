@@ -16,10 +16,9 @@ class GeladeiraFisica:
         self.k_compressor = 0.15
         
     def atualizar_ambiente_externo(self, tempo):
-        #Simula o ciclo dia/noite.
-        #A temperatura varia entre 20°C e 40°C.
+        #Simula um dia completo em 500 passos. Começa Frio (20°C), sobe até o Pico (40°C) e desce.
         
-        self.temp_ext = 30 + 10 * math.sin(tempo * 0.05)
+        self.temp_ext = 30 - 10 * math.cos(tempo * 0.012)
 
     def simular_passo(self, potencia_aplicada, dt=1):
         #Aplica a Lei de Resfriamento de Newton via Integração de Euler. dt: passo de tempo da simulação (padrão = 1 unidade)

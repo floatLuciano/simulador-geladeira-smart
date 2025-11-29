@@ -29,7 +29,7 @@ def rodar_simulacao():
         fuzzy_system.input['temp_ext'] = geladeira.temp_ext
         fuzzy_system.input['volume']   = geladeira.volume
         
-        # C. Tomada de Decisão (Compute)
+        # C. Tomada de Decisão (Compute) (desfuzzificação)
         fuzzy_system.compute()
         potencia_calculada = fuzzy_system.output['potencia']
         
